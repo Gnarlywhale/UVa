@@ -2,9 +2,13 @@ import java.util.*;
 import java.io.*;
 
 // UVa Online judge problem 100 - The 3n + 1 problem.
-public class threeN {
+class threeN {
 
-	public static void main(String[] args) {
+	public static void main(String[] args){
+		threeN work = new threeN();
+		work.Begin();
+	}
+	 void Begin() {
 		// Initialize io objects
 		Scanner in = new Scanner(System.in);
 		PrintWriter out = new PrintWriter(System.out, true);
@@ -55,7 +59,7 @@ public class threeN {
 		
 	}
 	// Calculates the cycle length for a given target, for the 3n+1 problem
-	public static int cycleLength(int target){
+	private static int cycleLength(int target){
 		int length = 1;
 		while(target != 1){
 			// If the number is even, divide by two, else multiply by three and add 1.
