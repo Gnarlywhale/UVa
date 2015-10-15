@@ -3,7 +3,7 @@ import java.io.*;
 
 // UVa Online judge problem 100 - The 3n + 1 problem.
 // NOTE: class name has to be "Main" for proper compilation.
-class Main {
+public class Main {
 
 	public static void main(String[] args){
 
