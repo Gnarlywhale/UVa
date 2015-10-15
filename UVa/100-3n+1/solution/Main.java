@@ -1,4 +1,3 @@
-package solution;
 import java.util.*;
 import java.io.*;
 
@@ -7,17 +6,17 @@ import java.io.*;
 class Main {
 
 	public static void main(String[] args){
-		
+
 		// Initialize io objects
 		Scanner in = new Scanner(System.in);
 		PrintWriter out = new PrintWriter(System.out, true);
-		
+
 		// Create a hasmap dictionary of cycle lengths for each number to limit amount of times the length is calculated.
 		Map<Long, Long> cycleMap =  new HashMap<Long, Long>();
-		
+
 		// Run for as long as input is an integer
 		while(in.hasNextLong()){
-			
+
 			long i= 0;
 			long j= 0;
 			i = in.nextLong();
@@ -27,18 +26,18 @@ class Main {
 				break;
 			}
 			long max = 0;
-			
+
 			//Determine start and end numbers
 			long start = (i>j)?j:i;
 			long finish = (i>j)?i:j;
-			
-			
+
+
 
 			// for every number between i and j, first see if cycle length is in cycleMap, if so print that value
 			// if not, calculate cycle length for the number.
 			for (long target = start; target <= finish; target++){
 				long cycleLength = -1;
-				
+
 				// Check if the current target's cycle length has already been calculated
 				if(cycleMap.containsKey(target)){
 					// Cycle length has already been calculated
@@ -49,15 +48,15 @@ class Main {
 					cycleLength = cycleLength(target);
 					// Insert new number into map
 					cycleMap.put(target, cycleLength);
-					
+
 				}
 				// Update the max cycle length if the new cycle length is larger
 				max = (max<cycleLength)? cycleLength:max;
-				
+
 			}
-			// Display output 
+			// Display output
 			// System.out.println(start + " "+ finish + " " + max);
-			// NOTE: The above is an incorrect output, the output order must match the input order (I fell for this gotcha). 
+			// NOTE: The above is an incorrect output, the output order must match the input order (I fell for this gotcha).
 			System.out.println(i + " "+ j + " " + max);
 		}
 
@@ -75,5 +74,5 @@ class Main {
 		}
 		return length;
 	}
-	
+
 }
