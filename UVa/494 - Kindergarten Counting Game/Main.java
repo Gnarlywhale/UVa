@@ -8,6 +8,7 @@ class Main {
   public static void main(String[] args) {
     Scanner in = new Scanner(System.in);
 
+    // Read while there are more lines.
     while(in.hasNext()){
         // Replace all non-whitespace, non-alphabet characters with whitespace.
         // Remove duplicate whitespace
